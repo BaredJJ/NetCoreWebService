@@ -1,0 +1,31 @@
+﻿@model WebService.Models.CurrentCurrency
+@{
+    Layout = "_Layout";
+}
+
+<h1>Current course</h1>
+
+<table class="table table-striped table-bordered table-sm">
+    <thead>
+    <tr>
+        <th class="text-left">Num code</th>
+        <th class="text-left">Char code</th>
+        <th class="text-left">Nominal</th>
+        <th class="text-left">Name</th>
+        <th class="text-right">Course</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var line in Model.Currencies)
+    {
+        <tr>
+            <th class="text-left">@line.NumCode</th>
+            <th class="text-left">@line.CharCode</th>
+            <th class="text-left">@line.Nominal</th>
+            <th class="text-left">@line.Name</th>
+            <th class="text-right">@line.Value</th>
+        </tr>
+    }
+    </tbody>
+</table>
+
